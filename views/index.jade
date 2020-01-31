@@ -1,0 +1,63 @@
+extends layout
+
+block content
+    .container#automation-main
+        .row
+            .col
+                h1#automation-title= "Systems"
+            .col
+                include automation-action-buttons.html
+            .col
+                button#create-auto-row.btn.btn-primary="Create Row"
+        p="Select one or more systems from the list below:"
+        .container
+            .row
+                table#automation.table.table-bordered.table-striped(style='width:100%;margin-top:10px', cellspacing='0')
+                    thead
+                        tr
+                            th
+                            th HostName
+                            th LoginID
+                            th CMD_PREFIX
+                            th IFN
+                            th CFN
+                            th OSType
+                            th SID
+                            th DBType
+                            th AppType
+                            th Order
+                            th CUSTNAME
+                            th LOCATION
+                            th HOST_TYPE                           
+                            th ACTION
+                    tbody
+                        tr
+                            td
+                                div.checkbox
+                                    input(type='checkbox').dt-checkboxes
+                                    label
+                            td 192.168.1.1
+                            td asd
+                            td mkmk
+                            td IFN
+                            td CFN
+                            td OSType
+                            td SID
+                            td DBType
+                            td AppType
+                            td CDIR
+                            td CUSTNAME
+                            td LOCATION
+                            td 
+                                a.edit(href='#')
+                                    i.fa.fa-pencil
+                                a.delete(href='#')
+                                    i.fa.fa-trash
+
+    include log-display.html
+    include crud-form.html
+    include scheduler.html
+    include upload.html
+    include uploadFile.html
+block scripts
+    script(src='/javascripts/user.js')                       
